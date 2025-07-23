@@ -1,5 +1,3 @@
-// import { useEffect, useState } from 'react';
-
 // interface Idea {
 //   id: number;
 //   text: string;
