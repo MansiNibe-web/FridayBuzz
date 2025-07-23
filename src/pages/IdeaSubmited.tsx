@@ -9,7 +9,7 @@
 //   }[];
 // }
 
-// const ViewGallery = () => {
+// const IdeaSubmited = () => {
 //   const [ideas, setIdeas] = useState<Idea[]>([]);
 
 //   useEffect(() => {
@@ -78,7 +78,8 @@
 //   );
 // };
 
-// export default ViewGallery;
+// export default IdeaSubmited;
+import DeleteIcon from '@mui/icons-material/Delete'
 import { useEffect, useState } from 'react';
 
 interface Idea {
@@ -90,7 +91,7 @@ interface Idea {
   }[];
 }
 
-const ViewGallery = () => {
+const IdeaSubmited = () => {
   const [ideas, setIdeas] = useState<Idea[]>([]);
   const [expandedIdeaIds, setExpandedIdeaIds] = useState<number[]>([]);
 
@@ -104,6 +105,12 @@ const ViewGallery = () => {
       prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
     );
   };
+
+  const handleDelete = (id: number) => {
+    const updatedIdeas = ideas.filter((idea) => idea.id !==id);
+    setIdeas(updatedIdeas);
+    localStorage.setItem('funFridayIdeas', JSON.stringify(updatedIdeas));
+  }
 
   return (
     <div style={{ marginTop: '5rem', padding: '1rem' }}>
@@ -126,6 +133,23 @@ const ViewGallery = () => {
                 borderRadius: '8px'
               }}
             >
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <p style={{ fontWeight: 'bold', margin: 0 }}>{idea.text}</p>
+                <button
+                    onClick={() => handleDelete(idea.id)}
+                    style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: '#ff4d4d'
+                    }}
+                    aria-label="Delete Idea"
+                >
+                    <DeleteIcon />
+                </button>
+                </div>
+
               <p style={{ fontWeight: 'bold' }}>{idea.text}</p>
 
               <div
@@ -182,4 +206,4 @@ const ViewGallery = () => {
   );
 };
 
-export default ViewGallery;
+export default IdeaSubmited;

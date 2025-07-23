@@ -1,53 +1,46 @@
+// import SearchBar from "../components/SearchBar";
+import VideoUploader from "../components/VideoUploader";
 const Home = () => {
-    return (
-        <div style={{ padding: '2rem 1.5rem', minHeight: '100vh', textAlign: 'center' ,marginBottom:'-1rem' }}>
-            <h2
-        style={{
-          marginBottom: '1.5rem',
-          fontSize: '2.5rem',
-          color: '#444',
-        }}
-      >
+  return (
+    <>
+      <h2 style={{ marginBottom: '1.5rem', fontSize: '2.5rem', color: '#444', marginLeft:'10rem' }}>
         Welcome to <span style={{ color: '#FF6B6B' }}>FridayBuzz 🎉</span>
       </h2>
-            <img src="/logop99soft.png" alt="Friday Buzz" width="1100" />
-        </div>
-    );
-}
+
+      {/* Search Component */}
+      {/* <div style={{ marginBottom: '2rem' }}>
+        <SearchBar />
+      </div> */}
+
+      {/* Logo or Banner */}
+      <img
+        src="/cat.jpg"
+        alt="Friday Buzz"
+        style={{
+          width: '90%',
+          maxWidth: '1000px',
+          borderRadius: '12px',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+        }}
+      />
+      {/* <div
+        style={{
+          width: '90%',
+          maxWidth: '1000px',
+          height: '300px',
+          backgroundImage: 'url("/logop99soft.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          borderRadius: '12px',
+          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+          margin: '0 auto',
+        }}
+      /> */}
+
+      {/* Video Uploader */}
+      <VideoUploader />
+    </>
+  );
+};
 
 export default Home;
-// const Home = () => {
-//   return (
-//     <div
-//       style={{
-//         padding: '7rem 2rem 2rem', // to avoid overlap with navbar
-//         minHeight: '100vh',
-//         textAlign: 'center',
-//         background: 'linear-gradient(to bottom, #f9f9f9, #ffffff)',
-//         fontFamily: 'Segoe UI, sans-serif',
-//       }}
-//     >
-//       <h2
-//         style={{
-//           marginBottom: '1.5rem',
-//           fontSize: '2.5rem',
-//           color: '#444',
-//         }}
-//       >
-//         Welcome to <span style={{ color: '#FF6B6B' }}>FridayBuzz 🎉</span>
-//       </h2>
-//       <img
-//         src="/logop99soft.png"
-//         alt="Friday Buzz"
-//         style={{
-//           width: '90%',
-//           maxWidth: '1000px',
-//           borderRadius: '12px',
-//           boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
-//         }}
-//       />
-//     </div>
-//   );
-// };
-
-// export default Home;
